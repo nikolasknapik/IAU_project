@@ -10104,7 +10104,10 @@ Pre premenné $EtCO_2$ a PRV boli vypočítané Cohenovo d &gt; 1, čo naznačuj
 Dosiahnutá  štat. sila bola 1.000 čo naznačuje prakticky istotu odhalenia reálneho existujúceho rozdielu</p>
 <p>Vo výpočtoch nižšie môžeme vidieť, že dosiahnutie bežnej sily na hladine 0.8 by stačilo len pár meraní v každej zo skupín. Pre <strong>$EtCO_2$</strong> približne 8/6 a pre <strong>PRV</strong> približne 32/22</p>
 <p>Tieto testy dokázali veľkú štatistickú silu a zistené rozdieli medzi skupinami sú spoľahlivé</p>
-<h2 id="Z%C3%A1ver">Záver<a class="anchor-link" href="#Z%C3%A1ver">¶</a></h2>
+<h2 id="Z%C3%A1ver">Záver<a class="anchor-link" href="#Z%C3%A1ver">¶</a></h2><p>Dáta sú kvalitovo správne v súbore observation.csv sú v očakávaných rozsahoch bez veľkých odchýlok. V station.csv sú tak isto dáta v poriadku avšak na celkovú analýzú bez spojenia s ostatnými nevyužiteľné. Naopak, v patient.csv sa vyskytlo viacero problémov, ktoré sa bude treba pozieť.</p>
+<p>Problémy v dátach celkovo sú v chýbajúcich spôsoboch prepojenia. Neechistuje prepojenie medzi patient a observation čož nám bráni tomu aby sme ďaľej štatisticky rozvíjali analýzu. Takisto neechistuje napojenie na stations. V súbore observation sa nachádzali duplicitné riadky. V súbore patient.csv bol jeden prázdny stĺpec <em>residence</em>, podozrivo veľa chýbajúcich hodnôt v stĺpcoch <em>job, address, birthdate</em> a nejednotné formáty dátumov. Takisto sa tam vyskytovali netypické zápisy krvnej skupiny a prípadne možné extrémne veky.</p>
+<p>Jedno z riešení, ktoré navrhujeme je pridať id pacienta do observations. Na vyriešenie chybných dátumov spravíme parsing. Odstránenie duplikátov a zjednotenie krvnej skupiny.</p>
+<p>Po aplikácií daných úprav by dáta boli pripravné na ďaľšie modelovanie pričom najviac zásahov vyžaduje patient.csv</p>
 </div>
 </div>
 </div>
