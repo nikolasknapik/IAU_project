@@ -7521,23 +7521,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fedbfbb3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.1-Z%C3%A1kladn%C3%BD-opis-d%C3%A1t-spolu-s-ich-charakteristikami">1.1 Základný opis dát spolu s ich charakteristikami<a class="anchor-link" href="#1.1-Z%C3%A1kladn%C3%BD-opis-d%C3%A1t-spolu-s-ich-charakteristikami">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cdf03fb4">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=44eb02d0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -7546,7 +7535,10 @@ a.anchor-link {
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span><span class="n">spearmanr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">ttest_ind</span><span class="p">,</span> <span class="n">mannwhitneyu</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm_stats</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.power</span><span class="w"> </span><span class="kn">import</span> <span class="n">tt_ind_solve_power</span>
+
 
 <span class="n">SEED</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
@@ -7563,12 +7555,23 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fedbfbb3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="1.1-Z%C3%A1kladn%C3%BD-opis-d%C3%A1t-spolu-s-ich-charakteristikami">1.1 Základný opis dát spolu s ich charakteristikami<a class="anchor-link" href="#1.1-Z%C3%A1kladn%C3%BD-opis-d%C3%A1t-spolu-s-ich-charakteristikami">¶</a></h2>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=74100442">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- A. Analýza štruktúr dát ---</span>
@@ -8135,7 +8138,7 @@ konverziu na typ <code>datetime64</code></p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [66]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">attributes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'SpO₂'</span><span class="p">,</span> <span class="s1">'HR'</span><span class="p">,</span> <span class="s1">'PI'</span><span class="p">,</span> <span class="s1">'RR'</span><span class="p">,</span> <span class="s1">'EtCO₂'</span><span class="p">,</span> <span class="s1">'FiO₂'</span><span class="p">,</span> <span class="s1">'BP'</span><span class="p">,</span> <span class="s1">'Skin Temperature'</span><span class="p">,</span> <span class="s1">'Motion/Activity index'</span><span class="p">,</span> <span class="s1">'CO'</span><span class="p">]</span>
@@ -8458,7 +8461,7 @@ Name: CO, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#vsetky numericke atributy</span>
@@ -8506,7 +8509,7 @@ Name: CO, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#ciselne stplce</span>
@@ -8553,7 +8556,7 @@ Name: CO, dtype: float64</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[68]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8693,7 +8696,7 @@ Name: CO, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">datasets</span> <span class="o">=</span> <span class="p">{</span>
@@ -8701,7 +8704,6 @@ Name: CO, dtype: float64</pre>
     <span class="s2">"Patient"</span><span class="p">:</span> <span class="n">df_pat</span><span class="p">,</span>
     <span class="s2">"Station"</span><span class="p">:</span> <span class="n">df_sta</span>
 <span class="p">}</span>
-
 
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">datasets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2"> Dataset: "</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
@@ -8879,7 +8881,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#vypisduplicitneho riadku v observation</span>
@@ -9035,7 +9037,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#zatial zakomentovane odstranenie duplicitnych riadkov</span>
@@ -9080,7 +9082,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#abnormalne data</span>
@@ -9105,8 +9107,6 @@ dtype: int64
     <span class="s1">'O₂ extraction ratio'</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>
     <span class="s1">'SNR'</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 <span class="p">}</span>
-
-
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Počet abnormálnych hodnôt podľa medicínskych rozsahov:</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span> <span class="ow">in</span> <span class="n">normal_ranges</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -9156,7 +9156,7 @@ SNR                 :    0 (0.0%) mimo rozsah
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Nelogické kombinácie</span>
@@ -9172,13 +9172,11 @@ SNR                 :    0 (0.0%) mimo rozsah
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mask</span> <span class="ow">in</span> <span class="n">rules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> riadkov (</span><span class="si">{</span><span class="n">mask</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> %)"</span><span class="p">)</span>
 
-
 <span class="c1">#patient.csv</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Patient: </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="n">invalid_blood</span> <span class="o">=</span> <span class="o">~</span><span class="n">df_pat</span><span class="p">[</span><span class="s1">'blood_group'</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">'A+'</span><span class="p">,</span> <span class="s1">'A-'</span><span class="p">,</span> <span class="s1">'B+'</span><span class="p">,</span> <span class="s1">'B-'</span><span class="p">,</span> <span class="s1">'AB+'</span><span class="p">,</span> <span class="s1">'AB-'</span><span class="p">,</span> <span class="s1">'0+'</span><span class="p">,</span> <span class="s1">'0-'</span><span class="p">,</span><span class="s1">'O-'</span><span class="p">,</span><span class="s1">'O+'</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Neplatné krvné skupiny:"</span><span class="p">,</span> <span class="n">invalid_blood</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-
 
 <span class="c1"># 2. Duplicitné SSN</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Duplicitné SSN:"</span><span class="p">,</span> <span class="n">df_pat</span><span class="p">[</span><span class="s1">'ssn'</span><span class="p">]</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
@@ -9244,7 +9242,7 @@ Duplicitné SSN: 0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#zistenie outlierov pomocou IQR metódy</span>
@@ -9261,10 +9259,7 @@ Duplicitné SSN: 0
 <span class="n">iqr_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iqr_set</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'atribút'</span><span class="p">,</span> <span class="s1">'počet outlierov'</span><span class="p">,</span> <span class="s1">'% z celku'</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'% z celku'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="p">(</span><span class="n">display</span><span class="p">(</span><span class="n">iqr_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)))</span>
 
-
-
 <span class="c1">#odstranenie vychylenych hodnot cez IQR metodu</span>
-
 <span class="n">df_no_outliers</span> <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">columns_no_outliners</span> <span class="o">=</span> <span class="n">df_no_outliers</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">'number'</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span>
 
@@ -9456,7 +9451,7 @@ Odstránených riadkov: 2182 (17.93 %)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_winsor</span> <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -9490,7 +9485,7 @@ Odstránených riadkov: 2182 (17.93 %)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [76]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">compare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -9599,6 +9594,271 @@ Odstránených riadkov: 2182 (17.93 %)
 </table>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12632e4b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="1.3--Formul%C3%A1cia-a-%C5%A1tatistick%C3%A9-overenie-hypot%C3%A9z-o-d%C3%A1tach">1.3  Formulácia a štatistické overenie hypotéz o dátach<a class="anchor-link" href="#1.3--Formul%C3%A1cia-a-%C5%A1tatistick%C3%A9-overenie-hypot%C3%A9z-o-d%C3%A1tach">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a17ba8f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.3-(A)">1.3 (A)<a class="anchor-link" href="#1.3-(A)">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bbceba9e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Hypot%C3%A9za-1-%E2%80%93-rozdiel-v-priemernej-hodnote-EtCO%E2%82%82-pod%C4%BEa-oximetry">Hypotéza 1 – rozdiel v priemernej hodnote EtCO₂ podľa <code>oximetry</code><a class="anchor-link" href="#Hypot%C3%A9za-1-%E2%80%93-rozdiel-v-priemernej-hodnote-EtCO%E2%82%82-pod%C4%BEa-oximetry">¶</a></h4><p><strong>Formulácia:</strong></p>
+<ul>
+<li><strong>H₀:</strong> Priemerná hodnota <em>EtCO₂</em> je rovnaká pre merania s <code>oximetry = 1</code> a <code>oximetry = 0</code>.</li>
+<li><strong>H₁:</strong> Priemerná hodnota <em>EtCO₂</em> sa líši medzi týmito dvomi skupinami.</li>
+</ul>
+<p><strong>Odôvodnenie výberu:</strong><br/>
+Podľa výsledkov korelačnej analýzy má <em>EtCO₂</em> (koncentrácia vydychovaného CO₂) najvyššiu mieru vzťahu s premennou <code>oximetry</code>. Preto sme overovali, či je táto závislosť aj štatisticky významná.</p>
+<p><strong>Výsledok (Welchov t-test):</strong><br/>
+Výpočet preukázal rozdiel medzi skupinami (<code>p &lt; 0.05</code>), preto <strong>zamietame H₀</strong>.<br/>
+Pri meraniach, kde bolo <code>oximetry = 1</code>, sa hodnota <em>EtCO₂</em> v priemere líši (je mierne vyššia) oproti meraniam bez oximetra.</p>
+<p><strong>Interpretácia:</strong><br/>
+Rozdiel naznačuje, že aktivácia oximetra (oximetry = 1) je spojená s odlišnými podmienkami merania – pravdepodobne s reálnym pripojením pacienta, keď sa zaznamenávajú vyššie a stabilnejšie hodnoty vydychovaného CO₂.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f78a3e3c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [77]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Rozdelenie podľa cieľovej premennej (oximetry = 0/1)</span>
+<span class="n">g1_mask</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[</span><span class="s1">'oximetry'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="n">g0_mask</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[</span><span class="s1">'oximetry'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="c1"># ==== H1: EtCO₂ sa líši medzi oximetry=1 a oximetry=0 ====</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g1_mask</span><span class="p">,</span> <span class="s1">'EtCO₂'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">g0</span> <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g0_mask</span><span class="p">,</span> <span class="s1">'EtCO₂'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">t1</span><span class="p">,</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Welch</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"H1 – EtCO₂ (Welch t-test)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"n1=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span><span class="si">}</span><span class="s2">, n0=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">g0</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"mean1=</span><span class="si">{</span><span class="n">g1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, mean0=</span><span class="si">{</span><span class="n">g0</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"t=</span><span class="si">{</span><span class="n">t1</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, p=</span><span class="si">{</span><span class="n">p1</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Záver: "</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"zamietame H0 (rozdiel významný)"</span> <span class="k">if</span> <span class="n">p1</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="s2">"nezamietame H0 (rozdiel nevýznamný)"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>H1 – EtCO₂ (Welch t-test)
+n1=7255, n0=4914
+mean1=41.483, mean0=39.167
+t=96.262, p=0.000e+00
+Záver: zamietame H0 (rozdiel významný)
+--------------------------------------------------
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc7f87d9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Hypot%C3%A9za-2-%E2%80%93-rozdiel-v-priemernej-hodnote-PRV-pod%C4%BEa-oximetry">Hypotéza 2 – rozdiel v priemernej hodnote PRV podľa <code>oximetry</code><a class="anchor-link" href="#Hypot%C3%A9za-2-%E2%80%93-rozdiel-v-priemernej-hodnote-PRV-pod%C4%BEa-oximetry">¶</a></h4><p><strong>Formulácia:</strong></p>
+<ul>
+<li><strong>H₀:</strong> Priemerná hodnota <em>PRV</em> je rovnaká pre <code>oximetry = 1</code> a <code>oximetry = 0</code>.</li>
+<li><strong>H₁:</strong> Priemerná hodnota <em>PRV</em> sa líši medzi týmito skupinami.</li>
+</ul>
+<p><strong>Odôvodnenie výberu:</strong><br/>
+Premenná <em>PRV</em> (Pulse Rate Variability) sa v korelačnej analýze taktiež prejavila ako jedna z najvýraznejších vo vzťahu k <code>oximetry</code>. Overujeme teda, či sa jej priemerné hodnoty medzi skupinami štatisticky líšia.</p>
+<p><strong>Výsledok (Welchov t-test):</strong><br/>
+Výsledný test ukázal rozdiel medzi skupinami (<code>p &lt; 0.05</code>), preto <strong>zamietame H₀</strong>.<br/>
+Merania, kde bol oximeter aktívny (<code>oximetry = 1</code>), vykazujú odlišné hodnoty <em>PRV</em> oproti meraniam bez oximetra.</p>
+<p><strong>Interpretácia:</strong><br/>
+Rozdiel v <em>PRV</em> môže naznačovať, že záznamy s aktívnym oximetrom pochádzajú z iných fáz monitorovania alebo iných typov pacientov. Tieto zistenia podporujú využitie premenných <em>$EtCO_2$</em> a <em>PRV</em> ako relevantných prediktorov pri ďalšom modelovaní cieľovej premennej <code>oximetry</code>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e0e204df">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [78]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g1_mask</span><span class="p">,</span> <span class="s1">'PRV'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">g0</span> <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g0_mask</span><span class="p">,</span> <span class="s1">'PRV'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="n">t2</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Welch</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"H2 – PRV (Welch t-test)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"n1=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span><span class="si">}</span><span class="s2">, n0=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">g0</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"mean1=</span><span class="si">{</span><span class="n">g1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, mean0=</span><span class="si">{</span><span class="n">g0</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"t=</span><span class="si">{</span><span class="n">t2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, p=</span><span class="si">{</span><span class="n">p2</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Záver: "</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"zamietame H0 (rozdiel významný)"</span> <span class="k">if</span> <span class="n">p2</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="s2">"nezamietame H0 (rozdiel nevýznamný)"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>H2 – PRV (Welch t-test)
+n1=7255, n0=4914
+mean1=128.689, mean0=106.154
+t=45.241, p=0.000e+00
+Záver: zamietame H0 (rozdiel významný)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=63e536bc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.3(B)">1.3(B)<a class="anchor-link" href="#1.3(B)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3270b46b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [79]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cohen_d</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    <span class="n">nx1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+    <span class="n">nx2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">s</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">nx1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">nx2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nx1</span><span class="o">+</span><span class="n">nx2</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x2</span><span class="p">)))</span> <span class="o">/</span> <span class="n">s</span>
+
+<span class="c1"># rozdelenie podla oximetry na 1 a 0</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[</span><span class="s1">'oximetry'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="n">g0</span> <span class="o">=</span> <span class="n">df_obs</span><span class="p">[</span><span class="s1">'oximetry'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">power_for</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g1</span><span class="p">,</span> <span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">df_obs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">g0</span><span class="p">,</span> <span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">d</span>  <span class="o">=</span> <span class="n">cohen_d</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
+    <span class="n">n1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x1</span><span class="p">);</span> <span class="n">n0</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+    <span class="n">ratio</span> <span class="o">=</span> <span class="n">n0</span> <span class="o">/</span> <span class="n">n1</span> <span class="k">if</span> <span class="n">n1</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">1.0</span>
+    <span class="n">power</span> <span class="o">=</span> <span class="n">sm_stats</span><span class="o">.</span><span class="n">power</span><span class="o">.</span><span class="n">tt_ind_solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="n">n1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"feature"</span><span class="p">:</span> <span class="n">feature</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">:</span> <span class="n">d</span><span class="p">,</span> <span class="s2">"power"</span><span class="p">:</span> <span class="n">power</span><span class="p">,</span> <span class="s2">"n1"</span><span class="p">:</span> <span class="n">n1</span><span class="p">,</span> <span class="s2">"n0"</span><span class="p">:</span> <span class="n">n0</span><span class="p">,</span> <span class="s2">"ratio"</span><span class="p">:</span> <span class="n">ratio</span><span class="p">}</span>
+
+<span class="n">res_eco2</span> <span class="o">=</span> <span class="n">power_for</span><span class="p">(</span><span class="s1">'EtCO₂'</span><span class="p">)</span>
+<span class="n">res_prv</span>  <span class="o">=</span> <span class="n">power_for</span><span class="p">(</span><span class="s1">'PRV'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"EtCO₂:   d=</span><span class="si">{d:.3f}</span><span class="s2">, power=</span><span class="si">{power:.3f}</span><span class="s2">, n1=</span><span class="si">{n1}</span><span class="s2">, n0=</span><span class="si">{n0}</span><span class="s2">, ratio=</span><span class="si">{ratio:.2f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">res_eco2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"PRV:     d=</span><span class="si">{d:.3f}</span><span class="s2">, power=</span><span class="si">{power:.3f}</span><span class="s2">, n1=</span><span class="si">{n1}</span><span class="s2">, n0=</span><span class="si">{n0}</span><span class="s2">, ratio=</span><span class="si">{ratio:.2f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">res_prv</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>EtCO₂:   d=1.777, power=1.000, n1=7255, n0=4914, ratio=0.68
+PRV:     d=0.799, power=1.000, n1=7255, n0=4914, ratio=0.68
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b79bfc8f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [80]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">n_for_power</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">target_power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="n">n1_needed</span> <span class="o">=</span> <span class="n">sm_stats</span><span class="o">.</span><span class="n">power</span><span class="o">.</span><span class="n">tt_ind_solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span>
+                                                  <span class="n">power</span><span class="o">=</span><span class="n">target_power</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">n1_needed</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">n1_needed</span> <span class="o">*</span> <span class="n">ratio</span><span class="p">))</span>
+
+<span class="n">n1e</span><span class="p">,</span> <span class="n">n0e</span> <span class="o">=</span> <span class="n">n_for_power</span><span class="p">(</span><span class="n">res_eco2</span><span class="p">[</span><span class="s2">"d"</span><span class="p">],</span> <span class="n">target_power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">res_eco2</span><span class="p">[</span><span class="s2">"ratio"</span><span class="p">])</span>
+<span class="n">n1p</span><span class="p">,</span> <span class="n">n0p</span> <span class="o">=</span> <span class="n">n_for_power</span><span class="p">(</span><span class="n">res_prv</span><span class="p">[</span><span class="s2">"d"</span><span class="p">],</span>  <span class="n">target_power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">res_prv</span><span class="p">[</span><span class="s2">"ratio"</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"EtCO₂:   potrebne N pre silu o hodnote=0.8: n1≈</span><span class="si">{</span><span class="n">n1e</span><span class="si">}</span><span class="s2">, n0≈</span><span class="si">{</span><span class="n">n0e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"PRV:     potrebné N pre silu o hodnote=0.8: n1≈</span><span class="si">{</span><span class="n">n1p</span><span class="si">}</span><span class="s2">, n0≈</span><span class="si">{</span><span class="n">n0p</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>EtCO₂:   potrebne N pre silu o hodnote=0.8: n1≈8, n0≈6
+PRV:     potrebné N pre silu o hodnote=0.8: n1≈32, n0≈22
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=749cf772">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Analýza štatistickej sily nám potvrdila, že oba testy majú veľmi silnú podporu dát.
+Pre premenné $EtCO_2$ a PRV boli vypočítané Cohenovo d &gt; 1, čo naznačuje veľký rozdiel medzi skupinami s oximetry = 1 a oximetry = 0
+Dosiahnutá  štat. sila bola 1.000 čo naznačuje prakticky istotu odhalenia reálneho existujúceho rozdielu</p>
+<p>Vo výpočtoch nižšie môžeme vidieť, že dosiahnutie bežnej sily na hladine 0.8 by stačilo len pár meraní v každej zo skupín. Pre <strong>$EtCO_2$</strong> približne 8/6 a pre <strong>PRV</strong> približne 32/22</p>
+<p>Tieto testy dokázali veľkú štatistickú silu a zistené rozdieli medzi skupinami sú spoľahlivé</p>
 </div>
 </div>
 </div>

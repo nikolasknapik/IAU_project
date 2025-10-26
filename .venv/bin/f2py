@@ -1,4 +1,4 @@
-#!/Users/nikolas/IAU/.venv/bin/python3
+#!/Users/nikolas/school/IAU/IAU_project/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

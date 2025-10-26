@@ -146,7 +146,7 @@ class BaseUnicodeTest(PsutilTestCase):
     def setUp(self):
         super().setUp()
         if self.skip_tests:
-            raise pytest.skip("can't handle unicode str")
+            return pytest.skip("can't handle unicode str")
 
 
 @pytest.mark.xdist_group(name="serial")
@@ -226,11 +226,14 @@ class TestFSAPIs(BaseUnicodeTest):
         assert isinstance(path, str)
         if BSD and not path:
             # XXX - see https://github.com/giampaolo/psutil/issues/595
-            raise pytest.skip("open_files on BSD is broken")
+            return pytest.skip("open_files on BSD is broken")
         if self.expect_exact_path_match():
             assert os.path.normcase(path) == os.path.normcase(self.funky_name)
 
     @pytest.mark.skipif(not POSIX, reason="POSIX only")
+    @pytest.mark.skipif(
+        not HAS_NET_CONNECTIONS_UNIX, reason="can't list UNIX sockets"
+    )
     def test_proc_net_connections(self):
         name = self.get_testfn(suffix=self.funky_suffix)
         sock = bind_unix_socket(name)
@@ -238,7 +241,7 @@ class TestFSAPIs(BaseUnicodeTest):
             conn = psutil.Process().net_connections('unix')[0]
             assert isinstance(conn.laddr, str)
             if not conn.laddr and MACOS and CI_TESTING:
-                raise pytest.skip("unreliable on OSX")
+                return pytest.skip("unreliable on OSX")
             assert conn.laddr == name
 
     @pytest.mark.skipif(not POSIX, reason="POSIX only")
