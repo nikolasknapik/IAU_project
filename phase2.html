@@ -8143,7 +8143,7 @@ Name: oximetry, dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [410]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
@@ -8153,7 +8153,7 @@ Name: oximetry, dtype: float64</pre>
     <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>          
 <span class="p">)</span>
 
-<span class="c1"># 5. Overenie výsledkov</span>
+<span class="c1"># Overenie výsledkov</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Train shape:"</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Test shape:"</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Pomer tried v train:"</span><span class="p">)</span>
@@ -8212,12 +8212,12 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [411]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># kontrola duplikatov</span>
 <span class="n">non_numeric</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)]</span>
-<span class="k">assert</span> <span class="ow">not</span> <span class="n">non_numeric</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Nasledujúce stĺpce nie sú numerické: </span><span class="si">{</span><span class="n">non_numeric</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">non_numeric</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"nie sú numerické: </span><span class="si">{</span><span class="n">non_numeric</span><span class="si">}</span><span class="s2">"</span>
 
 <span class="c1"># odstranenie duplikatov</span>
 <span class="n">dup_mask</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s2">"first"</span><span class="p">)</span>
@@ -8389,11 +8389,11 @@ Rozloženie premieňa na približne normálne a robustne škáluje, čo potláč
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [401]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Poistky: y nesmie byť medzi features</span>
-<span class="k">assert</span> <span class="s2">"oximetry"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">X_train_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s2">"Pozor: oximetry je vo features!"</span>
+<span class="k">assert</span> <span class="s2">"oximetry"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">X_train_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s2">"oximetry je vo features"</span>
 <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">X_train_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">X_test_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <span class="n">feature_cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_train_clean</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <span class="n">TARGET</span> <span class="o">=</span> <span class="s2">"oximetry"</span>  
@@ -8403,7 +8403,6 @@ Rozloženie premieňa na približne normálne a robustne škáluje, čo potláč
 <span class="n">OUT_DIR</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">save_variant</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">Xtr_df</span><span class="p">,</span> <span class="n">Xte_df</span><span class="p">,</span> <span class="n">Ytr</span><span class="p">,</span> <span class="n">Yte</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Pripojí y až po transformácii X a uloží CSV (train/test) pre daný variant."""</span>
     <span class="c1"># sanity checks</span>
     <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">Xtr_df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: NaN/inf v train"</span>
     <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">Xte_df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: NaN/inf v test"</span>
@@ -8416,19 +8415,19 @@ Rozloženie premieňa na približne normálne a robustne škáluje, čo potláč
     <span class="n">tr</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">tr_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="n">te</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">te_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[OK] </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> → </span><span class="si">{</span><span class="n">tr_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">te_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">  (shapes: </span><span class="si">{</span><span class="n">tr</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">te</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 
-<span class="c1"># -------- Scaling #1: StandardScaler --------</span>
+<span class="c1"># -------- Scaling 1: StandardScaler --------</span>
 <span class="n">sc_std</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">Xtr_std</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sc_std</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_clean</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">X_train_clean</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">)</span>
 <span class="n">Xte_std</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sc_std</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_clean</span><span class="p">),</span>      <span class="n">index</span><span class="o">=</span><span class="n">X_test_clean</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>  <span class="n">columns</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">)</span>
 <span class="n">save_variant</span><span class="p">(</span><span class="s2">"std"</span><span class="p">,</span> <span class="n">Xtr_std</span><span class="p">,</span> <span class="n">Xte_std</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
 
-<span class="c1"># -------- Scaling #2: MinMaxScaler --------</span>
+<span class="c1"># -------- Scaling 2: MinMaxScaler --------</span>
 <span class="n">sc_minmax</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
 <span class="n">Xtr_minmax</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sc_minmax</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_clean</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">X_train_clean</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">)</span>
 <span class="n">Xte_minmax</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sc_minmax</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_clean</span><span class="p">),</span>      <span class="n">index</span><span class="o">=</span><span class="n">X_test_clean</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>  <span class="n">columns</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">)</span>
 <span class="n">save_variant</span><span class="p">(</span><span class="s2">"minmax"</span><span class="p">,</span> <span class="n">Xtr_minmax</span><span class="p">,</span> <span class="n">Xte_minmax</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
 
-<span class="c1"># -------- Transformer #1: Power(Yeo–Johnson) + StandardScaler --------</span>
+<span class="c1"># -------- Transformer 1: Power(Yeo–Johnson) + StandardScaler --------</span>
 <span class="n">pt</span> <span class="o">=</span> <span class="n">PowerTransformer</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"yeo-johnson"</span><span class="p">)</span>         <span class="c1"># fit iba na train</span>
 <span class="n">Xtr_pt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_clean</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">X_train_clean</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">)</span>
 <span class="n">Xte_pt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_clean</span><span class="p">),</span>      <span class="n">index</span><span class="o">=</span><span class="n">X_test_clean</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>  <span class="n">columns</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">)</span>
@@ -8438,7 +8437,7 @@ Rozloženie premieňa na približne normálne a robustne škáluje, čo potláč
 <span class="n">Xte_power</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sc_after_pt</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xte_pt</span><span class="p">),</span>     <span class="n">index</span><span class="o">=</span><span class="n">Xte_pt</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_cols</span><span class="p">)</span>
 <span class="n">save_variant</span><span class="p">(</span><span class="s2">"power"</span><span class="p">,</span> <span class="n">Xtr_power</span><span class="p">,</span> <span class="n">Xte_power</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
 
-<span class="c1"># -------- Transformer #2: Quantile(→ normal) + RobustScaler --------</span>
+<span class="c1"># -------- Transformer 2: Quantile(→ normal) + RobustScaler --------</span>
 <span class="n">qt</span> <span class="o">=</span> <span class="n">QuantileTransformer</span><span class="p">(</span><span class="n">output_distribution</span><span class="o">=</span><span class="s2">"normal"</span><span class="p">,</span>
                          <span class="n">n_quantiles</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_train_clean</span><span class="p">)),</span>
                          <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -8490,10 +8489,10 @@ Hotovo: 4 varianty uložené v /Users/nikolas/school/IAU/IAU_project/processed
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [414]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"./processed"</span><span class="p">)</span>  <span class="c1"># uprav podľa toho, kde to máš</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"./processed"</span><span class="p">)</span>
 <span class="n">VARIANTS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"std"</span><span class="p">,</span> <span class="s2">"minmax"</span><span class="p">,</span> <span class="s2">"power"</span><span class="p">,</span> <span class="s2">"quantile"</span><span class="p">]</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">check_variant</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
@@ -8539,17 +8538,16 @@ Hotovo: 4 varianty uložené v /Users/nikolas/school/IAU/IAU_project/processed
         <span class="n">s</span> <span class="o">=</span> <span class="n">desc</span><span class="p">[</span><span class="s2">"std"</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">] mean≈</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, std≈</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">  (očakávanie: mean≈0, std≈1)"</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"minmax"</span><span class="p">:</span>
-        <span class="c1"># väčšina hodnôt v ⟨0,1⟩ (min &gt;= 0-ε, max &lt;= 1+ε)</span>
+        <span class="c1"># väčšina hodnôt v ⟨0,1⟩</span>
         <span class="n">min_ok</span> <span class="o">=</span> <span class="p">(</span><span class="n">desc</span><span class="p">[</span><span class="s2">"min"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">1e-9</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
         <span class="n">max_ok</span> <span class="o">=</span> <span class="p">(</span><span class="n">desc</span><span class="p">[</span><span class="s2">"max"</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">+</span><span class="mf">1e-9</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">] % stĺpcov s min&gt;=0: </span><span class="si">{</span><span class="mi">100</span><span class="o">*</span><span class="n">min_ok</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%, max&lt;=1: </span><span class="si">{</span><span class="mi">100</span><span class="o">*</span><span class="n">max_ok</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%  (očakávanie ≈100%)"</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"power"</span><span class="p">:</span>
-        <span class="c1"># po Power(YJ)+Standard by mal byť mean≈0, std≈1 (ako pri std, ale „uhladené“ rozdelenia)</span>
         <span class="n">m</span> <span class="o">=</span> <span class="n">desc</span><span class="p">[</span><span class="s2">"mean"</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">desc</span><span class="p">[</span><span class="s2">"std"</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">] mean≈</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, std≈</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">  (očakávanie: mean≈0, std≈1)"</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"quantile"</span><span class="p">:</span>
-        <span class="c1"># po Quantile→normal + Robust: medián ~0, IQR ≈ 1 (robustný scale)</span>
+        <span class="c1"># po Quantile→normal + Robust: medián ~0, IQR = 1 (robustný scale)</span>
         <span class="n">q1</span> <span class="o">=</span> <span class="n">Xtr</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
         <span class="n">q3</span> <span class="o">=</span> <span class="n">Xtr</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
         <span class="n">iqr</span> <span class="o">=</span> <span class="p">(</span><span class="n">q3</span> <span class="o">-</span> <span class="n">q1</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
@@ -8711,7 +8709,7 @@ Všetky kontroly prebehli.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [404]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rank_series</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">feats</span><span class="p">):</span>
@@ -8748,7 +8746,7 @@ Všetky kontroly prebehli.
 <span class="c1"># Ensemble skóre = priemer normalizovaných skóre</span>
 <span class="n">scores_norm</span><span class="p">[</span><span class="s2">"ensemble_mean"</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores_norm</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># po výpočte scores_norm (s ensemble_mean) urobíme iba jednu „clean“ tabuľku</span>
+<span class="c1"># urobíme iba jednu tabuľku</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">make_table</span><span class="p">(</span><span class="n">scores_norm</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
     <span class="c1"># ranky (1 = najlepšie)</span>
     <span class="n">ranks</span> <span class="o">=</span> <span class="n">scores_norm</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"min"</span><span class="p">)</span>
@@ -8775,7 +8773,7 @@ Všetky kontroly prebehli.
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[404]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8968,7 +8966,8 @@ Všetky kontroly prebehli.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.3-(A),(B)-%C3%9Aprava-testovacej-mno%C5%BEiny-s-pou%C5%BEit%C3%ADm-pipeline">2.3 (A),(B) Úprava testovacej množiny s použitím pipeline<a class="anchor-link" href="#2.3-(A),(B)-%C3%9Aprava-testovacej-mno%C5%BEiny-s-pou%C5%BEit%C3%ADm-pipeline">¶</a></h3>
+<h3 id="2.3-(A),(B)-%C3%9Aprava-testovacej-mno%C5%BEiny-s-pou%C5%BEit%C3%ADm-pipeline">2.3 (A),(B) Úprava testovacej množiny s použitím pipeline<a class="anchor-link" href="#2.3-(A),(B)-%C3%9Aprava-testovacej-mno%C5%BEiny-s-pou%C5%BEit%C3%ADm-pipeline">¶</a></h3><p>Vyššie pri riešení úlohy 2.1 sme sa pomýlili a aplikovali sme niektoré úpravy aj na testovaciu množinu.</p>
+<p>V ďaľšom kroku upravíme kód z úlohy 2.1 tak aby sa úpravy aplikovali aj na trénovaciu a zároveň aj na testovaciu bez narušenia procesu učenia. Čiže fit sa bude robť</p>
 </div>
 </div>
 </div>
@@ -8977,7 +8976,7 @@ Všetky kontroly prebehli.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [405]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [415]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">TARGET</span> <span class="o">=</span> <span class="s2">"oximtetry"</span>
@@ -9057,10 +9056,10 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [406]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># ===== 2.3 – replikovateľné predspracovanie s sklearn.pipeline =====</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># replikovateľné predspracovanie s sklearn.pipeline</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">joblib</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -9073,7 +9072,6 @@ Name: proportion, dtype: float64
 <span class="n">OUT_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"./processed"</span><span class="p">)</span>
 <span class="n">OUT_DIR</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c1"># 0) Predpoklad: X_train, X_test, Y_train, Y_test sú pripravené (po tvojom čistení)</span>
 <span class="c1">#    Poradie stĺpcov MUSÍ byť totožné</span>
 <span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="s2">"Train/Test nemajú rovnaké stĺpce v rovnakom poradí."</span>
 <span class="n">feature_cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -9083,16 +9081,15 @@ Name: proportion, dtype: float64
     <span class="n">Xtr_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Xtr</span><span class="p">)</span>
     <span class="n">Xte_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Xte</span><span class="p">)</span>
 
-    <span class="c1"># sanity: bez NaN/inf</span>
+    <span class="c1"># bez NaN/inf</span>
     <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">Xtr_np</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: NaN/inf v train"</span>
     <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">Xte_np</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: NaN/inf v test"</span>
 
-    <span class="c1"># sanity: sedí počet stĺpcov</span>
+    <span class="c1"># sedí počet stĺpcov</span>
     <span class="k">assert</span> <span class="n">Xtr_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: Xtr má </span><span class="si">{</span><span class="n">Xtr_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> ≠ </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">)</span><span class="si">}</span><span class="s2"> stĺpcov"</span>
     <span class="k">assert</span> <span class="n">Xte_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">),</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: Xte má </span><span class="si">{</span><span class="n">Xte_np</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> ≠ </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">)</span><span class="si">}</span><span class="s2"> stĺpcov"</span>
 
     <span class="c1"># na DataFrame s rovnakými indexami ako y</span>
-    <span class="c1"># (ak Ytr/Yte nie sú Series, spravíme z nich Series kvôli indexu)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">Ytr</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
         <span class="n">Ytr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">Ytr</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">Yte</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
@@ -9112,7 +9109,7 @@ Name: proportion, dtype: float64
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[OK] </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> → </span><span class="si">{</span><span class="n">tr_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">te_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">  "</span>
           <span class="sa">f</span><span class="s2">"(train: </span><span class="si">{</span><span class="n">tr</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, test: </span><span class="si">{</span><span class="n">te</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 
-<span class="c1"># 1) Definuj 4 varianty ako Pipeliny</span>
+<span class="c1"># 4 varianty ako Pipeliny</span>
 <span class="n">nq</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>  <span class="c1"># pre QuantileTransformer</span>
 <span class="n">pipelines</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"std"</span><span class="p">:</span> <span class="n">Pipeline</span><span class="p">([</span>
