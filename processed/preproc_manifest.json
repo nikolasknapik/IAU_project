@@ -1,0 +1,27 @@
+{
+  "feature_cols_path": "processed/feature_cols.pkl",
+  "variants": {
+    "std": {
+      "transformers": [
+        "processed/std_scaler.joblib"
+      ]
+    },
+    "minmax": {
+      "transformers": [
+        "processed/minmax_scaler.joblib"
+      ]
+    },
+    "power": {
+      "transformers": [
+        "processed/power_pt.joblib",
+        "processed/power_std_scaler.joblib"
+      ]
+    },
+    "quantile": {
+      "transformers": [
+        "processed/quantile_qt.joblib",
+        "processed/quantile_robust_scaler.joblib"
+      ]
+    }
+  }
+}
