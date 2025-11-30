@@ -7537,7 +7537,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -7548,7 +7548,7 @@ a.anchor-link {
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="c1"># Cesty k súborom – prispôsob ak máš iné</span>
+
 <span class="n">TRAIN_PATH</span> <span class="o">=</span> <span class="s2">"processed/train_std.csv"</span>
 <span class="n">TEST_PATH</span> <span class="o">=</span> <span class="s2">"processed/test_std.csv"</span>
 <span class="n">TARGET_COL</span> <span class="o">=</span> <span class="s2">"oximetry"</span>
@@ -7567,7 +7567,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7751,6 +7751,18 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=943cae8b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>V tejto časti sme implementovali vlastný rozhodovací strom podľa algoritmu ID3.<br/>
+Cieľom bolo pochopiť základné mechanizmy rozhodovacích stromov a otestovať, ako dobre dokáže jednoduchý strom klasifikovať premennú <code>oximetry</code> na našom datasete.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=63331876">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7766,13 +7778,12 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># predpokladáme, že všetky ostatné stĺpce sú feature a oximetry je target</span>
-<span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">train_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">TARGET_COL</span><span class="p">]</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">train_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">TARGET_COL</span><span class="p">]</span>
 
-<span class="c1"># Rozdelenie na vstupne premenné a cieľovú premennú</span>
+<span class="c1"># Rozdelenie na vstupne premenne a cielovu premennu</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="n">TARGET_COL</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
@@ -7790,7 +7801,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>((9734, 22), (2434, 22))</pre>
 </div>
@@ -7813,37 +7824,32 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">entropy</span><span class="p">(</span><span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Vypočíta entropiu pre vektor tried y."""</span>
+    <span class="c1">#vypocet entropie</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.0</span>
     <span class="n">_</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">counts</span> <span class="o">/</span> <span class="n">counts</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mf">1e-9</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># + malá hodnota kvôli log(0)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mf">1e-9</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># + mala hodkota kvoli logu(0)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">best_split_for_feature</span><span class="p">(</span><span class="n">X_column</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Nájde najlepší prah (threshold) pre jeden numerický atribút</span>
-<span class="sd">    na základe information gain.</span>
-<span class="sd">    Vracia (najlepší_threshold, maximálny_gain). Ak sa nenašlo zlepšenie, vráti (None, 0).</span>
-<span class="sd">    """</span>
-    <span class="c1"># zoradíme unikátne hodnoty</span>
+    <span class="c1"># funkcia na best spit pre jednu feature</span>
+    <span class="c1"># unikatne hodnoty v stlpci</span>
     <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">X_column</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.0</span>
 
-    <span class="c1"># premenné na sledovanie najlepšieho splitu</span>
+    <span class="c1">#premenne na sledovanie najlepsieho splitu</span>
     <span class="n">best_gain</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="n">best_threshold</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="n">base_entropy</span> <span class="o">=</span> <span class="n">entropy</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 
-    <span class="c1"># kandidátne thresholdy – stredy medzi susednými hodnotami</span>
     <span class="n">thresholds</span> <span class="o">=</span> <span class="p">(</span><span class="n">values</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mf">2.0</span>
 
     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">:</span>
@@ -7888,7 +7894,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">TreeNode</span><span class="p">:</span>
@@ -7901,14 +7907,14 @@ a.anchor-link {
                  <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="c1"># index feature, podľa ktorého sa delí</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">feature_index</span> <span class="o">=</span> <span class="n">feature_index</span>
-        <span class="c1"># prah pre numerický split</span>
+        <span class="c1"># threshold pre num split</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="o">=</span> <span class="n">threshold</span>
-        <span class="c1"># ľavý a pravý podstrom</span>
+        <span class="c1"># left right child uzly</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
-        <span class="c1"># hodnota listu (ak je uzol list)</span>
+        <span class="c1"># hodnota listu</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="c1"># hĺbka uzla – len pre info/overfitting</span>
+        <span class="c1"># hĺbka uzla pre infoinfo/overfitting</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">depth</span> <span class="o">=</span> <span class="n">depth</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">is_leaf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -7934,7 +7940,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ID3Classifier</span><span class="p">:</span>
@@ -7950,21 +7956,18 @@ a.anchor-link {
     <span class="k">def</span><span class="w"> </span><span class="nf">_build_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="n">num_samples</span><span class="p">,</span> <span class="n">num_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
         <span class="n">num_labels</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-
         <span class="c1"># Stopping conditions</span>
-        <span class="c1"># 1) všetky vzorky majú rovnaký label</span>
         <span class="k">if</span> <span class="n">num_labels</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">leaf_value</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="k">return</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">leaf_value</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">)</span>
 
-        <span class="c1"># 2) dosiahli sme max_depth alebo málo vzoriek</span>
         <span class="k">if</span> <span class="n">depth</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_depth</span> <span class="ow">or</span> <span class="n">num_samples</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_samples_split</span><span class="p">:</span>
             <span class="c1"># list – väčšinová trieda</span>
             <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">leaf_value</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">counts</span><span class="p">)]</span>
             <span class="k">return</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">leaf_value</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">)</span>
 
-        <span class="c1"># Hľadanie najlepšieho rozdelenia</span>
+        <span class="c1"># Hľadanie najlepšieho splitu</span>
         <span class="n">best_gain</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="n">best_feature</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">best_threshold</span> <span class="o">=</span> <span class="kc">None</span>
@@ -7976,13 +7979,13 @@ a.anchor-link {
                 <span class="n">best_feature</span> <span class="o">=</span> <span class="n">feature_idx</span>
                 <span class="n">best_threshold</span> <span class="o">=</span> <span class="n">threshold</span>
 
-        <span class="c1"># Ak žiadne zlepšenie, vytvor list</span>
+        
         <span class="k">if</span> <span class="n">best_gain</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">best_feature</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">leaf_value</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">counts</span><span class="p">)]</span>
             <span class="k">return</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">leaf_value</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">)</span>
 
-        <span class="c1"># rozdelenie dát podľa najlepšieho splitu</span>
+        <span class="c1"># rozdelenie dát podla best splitu</span>
         <span class="n">left_mask</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="n">best_feature</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">best_threshold</span>
         <span class="n">right_mask</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="n">best_feature</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best_threshold</span>
 
@@ -8015,6 +8018,19 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ecfe920">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Najskôr sme naprogramovali vlastnú verziu ID3 s podporou pre číselné atribúty.<br/>
+Implementácia zahŕňa výpočet entropie, information gain, hľadanie najlepšieho splitu a rekurzívnu stavbu stromu.<br/>
+Strom má obmedzenú hĺbku, aby sme predišli prílišnému prevzdelaniu.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1afa87ba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8030,7 +8046,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">id3</span> <span class="o">=</span> <span class="n">ID3Classifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -8040,14 +8056,14 @@ a.anchor-link {
 <span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">id3</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">print_metrics</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"=== </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> ==="</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"---"</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="s2">"---"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Accuracy :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Precision:"</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Recall   :"</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">()</span>
 
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 – TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">)</span>
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 – TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 - TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">)</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 - TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Detailnejší report (test):"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
@@ -8063,12 +8079,12 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>=== ID3 – TRAIN ===
+<pre>--- ID3 - TRAIN ---
 Accuracy : 0.892233408670639
 Precision: 0.9116883116883117
 Recall   : 0.9071330117160579
 
-=== ID3 – TEST ===
+--- ID3 - TEST ---
 Accuracy : 0.8935907970419064
 Precision: 0.9162011173184358
 Recall   : 0.9042039972432805
@@ -8089,13 +8105,29 @@ weighted avg       0.89      0.89      0.89      2434
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ec8c1f3a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Model sme vyhodnotili na trénovacej aj testovacej sade.<br/>
+Metriky ukázali, že ID3 dosahuje stabilnú presnosť približne na úrovni 0.89 a vykazuje veľmi podobné výsledky na train aj test datasetoch.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=523942f3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.1-C-Test-na-overfiting">3.1-C Test na overfiting<a class="anchor-link" href="#3.1-C-Test-na-overfiting">¶</a></h3>
+<h3 id="3.1-C-Test-na-overfiting">3.1-C Test na overfiting<a class="anchor-link" href="#3.1-C-Test-na-overfiting">¶</a></h3><p>Aby sme overili, či sa model preučuje, testovali sme dve rôzne konfigurácie:</p>
+<ul>
+<li>hĺbkový strom (vyšší riskoverfittingu)</li>
+<li>regulovaný strom (nižší risk overfittingu).</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8104,22 +8136,22 @@ weighted avg       0.89      0.89      0.89      2434
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># "Veľmi hlboký" strom – možno overfit</span>
 <span class="n">id3_overfit</span> <span class="o">=</span> <span class="n">ID3Classifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">id3_overfit</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 (max_depth=10) – TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">id3_overfit</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 (max_depth=10) – TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">id3_overfit</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 (max_depth=10) - TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">id3_overfit</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 (max_depth=10) - TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">id3_overfit</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
 
 <span class="c1"># "Regularizovaný" strom – menšia hĺbka a väčší min_samples_split</span>
 <span class="n">id3_regularized</span> <span class="o">=</span> <span class="n">ID3Classifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">id3_regularized</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 regularized – TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">id3_regularized</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 regularized – TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">id3_regularized</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 regularized - TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">id3_regularized</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"ID3 regularized - TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">id3_regularized</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8132,28 +8164,39 @@ weighted avg       0.89      0.89      0.89      2434
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>=== ID3 (max_depth=10) – TRAIN ===
+<pre>--- ID3 (max_depth=10) - TRAIN ---
 Accuracy : 0.9645572221080748
 Precision: 0.9623920040657293
 Recall   : 0.9788077188146106
 
-=== ID3 (max_depth=10) – TEST ===
+--- ID3 (max_depth=10) - TEST ---
 Accuracy : 0.9063270336894002
 Precision: 0.9145762711864407
 Recall   : 0.9297036526533425
 
-=== ID3 regularized – TRAIN ===
+--- ID3 regularized - TRAIN ---
 Accuracy : 0.8653174440106842
 Precision: 0.9252318758281279
 Recall   : 0.8421778084079945
 
-=== ID3 regularized – TEST ===
+--- ID3 regularized - TEST ---
 Accuracy : 0.8738701725554643
 Precision: 0.9313725490196079
 Recall   : 0.8511371467953136
 
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ffb89c33">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Porovnanie train/test accuracy ukázalo, že pôvodná konfigurácia ID3 nepreučovala a regularizovaná verzia bola dokonca mierne stabilnejšia.</p>
 </div>
 </div>
 </div>
@@ -8223,7 +8266,7 @@ Recall   : 0.8511371467953136
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">dt_clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span>
@@ -8237,8 +8280,8 @@ Recall   : 0.8511371467953136
 <span class="n">y_train_pred_dt</span> <span class="o">=</span> <span class="n">dt_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">y_test_pred_dt</span> <span class="o">=</span> <span class="n">dt_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"DecisionTree – TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_dt</span><span class="p">)</span>
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"DecisionTree – TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_dt</span><span class="p">)</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"DecisionTree - TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_dt</span><span class="p">)</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"DecisionTree - TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_dt</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8251,18 +8294,30 @@ Recall   : 0.8511371467953136
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>=== DecisionTree – TRAIN ===
+<pre>--- DecisionTree - TRAIN ---
 Accuracy : 0.8992192315594822
 Precision: 0.9262860173236698
 Recall   : 0.9028256374913852
 
-=== DecisionTree – TEST ===
+--- DecisionTree - TEST ---
 Accuracy : 0.8940016433853739
 Precision: 0.923951670220327
 Recall   : 0.895933838731909
 
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=78861fcf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Prvý sme trénovali stromový model zo sklearn knižnice, aby sme mali porovnanie k nášmu ID3.<br/>
+DecisionTree dal podobný výkon ako náš vlastný strom, čo ukázalo naozaj správnu implementáciu.</p>
 </div>
 </div>
 </div>
@@ -8282,7 +8337,7 @@ Recall   : 0.895933838731909
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">log_reg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span>
@@ -8294,8 +8349,8 @@ Recall   : 0.895933838731909
 <span class="n">y_train_pred_lr</span> <span class="o">=</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 <span class="n">y_test_pred_lr</span> <span class="o">=</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"LogisticRegression – TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_lr</span><span class="p">)</span>
-<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"LogisticRegression – TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_lr</span><span class="p">)</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"LogisticRegression - TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_lr</span><span class="p">)</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"LogisticRegression - TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_lr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8308,18 +8363,30 @@ Recall   : 0.895933838731909
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>=== LogisticRegression – TRAIN ===
+<pre>--- LogisticRegression - TRAIN ---
 Accuracy : 0.8462091637559072
 Precision: 0.8671781756180733
 Recall   : 0.8762922122674018
 
-=== LogisticRegression – TEST ===
+--- LogisticRegression - TEST ---
 Accuracy : 0.8578471651602301
 Precision: 0.8745762711864407
 Recall   : 0.8890420399724328
 
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=16f67c10">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Potom sme podľa zadania použili aj lineárny model LogisticRegression.<br/>
+Výsledky ukázali, že nestromový prístup dosahujú nižšiu presnosť ale sú dôležité na porovnanie</p>
 </div>
 </div>
 </div>
@@ -8339,7 +8406,7 @@ Recall   : 0.8890420399724328
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Predikcie pre všetky tri modely – pre istotu ich spočítame znova</span>
@@ -8357,14 +8424,14 @@ Recall   : 0.8890420399724328
 <span class="n">y_test_pred_lr</span> <span class="o">=</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"=== Porovnanie accuracy (TRAIN) ==="</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"ID3 (vlastný)       :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_id3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"DecisionTree (skl.) :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_dt</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"LogisticReg (skl.)  :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_lr</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ID3          :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_id3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"DecisionTree :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_dt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"LogisticReg  :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_lr</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">=== Porovnanie accuracy (TEST) ==="</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"ID3 (vlastný)       :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_id3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"DecisionTree (skl.) :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_dt</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"LogisticReg (skl.)  :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_lr</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ID3          :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_id3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"DecisionTree :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_dt</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"LogisticReg :"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_lr</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8378,14 +8445,14 @@ Recall   : 0.8890420399724328
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>=== Porovnanie accuracy (TRAIN) ===
-ID3 (vlastný)       : 0.892233408670639
-DecisionTree (skl.) : 0.8992192315594822
-LogisticReg (skl.)  : 0.8462091637559072
+ID3          : 0.892233408670639
+DecisionTree : 0.8992192315594822
+LogisticReg  : 0.8462091637559072
 
 === Porovnanie accuracy (TEST) ===
-ID3 (vlastný)       : 0.8935907970419064
-DecisionTree (skl.) : 0.8940016433853739
-LogisticReg (skl.)  : 0.8578471651602301
+ID3          : 0.8935907970419064
+DecisionTree : 0.8940016433853739
+LogisticReg : 0.8578471651602301
 </pre>
 </div>
 </div>
@@ -8407,7 +8474,7 @@ LogisticReg (skl.)  : 0.8578471651602301
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
@@ -8441,6 +8508,17 @@ LogisticReg (skl.)  : 0.8578471651602301
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d56161e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Pomocou vizualizácie sme zobrazili časť rozhodovacieho stromu, čo poskytlo prehľad nad tým, ako model rozdeľuje jednotlivé atribúty.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=015b782e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8456,7 +8534,7 @@ LogisticReg (skl.)  : 0.8578471651602301
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">eval_results</span> <span class="o">=</span> <span class="p">[]</span>
@@ -8486,7 +8564,7 @@ LogisticReg (skl.)  : 0.8578471651602301
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8559,7 +8637,682 @@ LogisticReg (skl.)  : 0.8578471651602301
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.3-(A)-Na-tr%C3%A9novanie-vyu%C5%BEite-jeden-stromov%C3%BD-algoritmus-v-scikit-learn">3.3 (A) Na trénovanie využite jeden stromový algoritmus v scikit-learn<a class="anchor-link" href="#3.3-(A)-Na-tr%C3%A9novanie-vyu%C5%BEite-jeden-stromov%C3%BD-algoritmus-v-scikit-learn">¶</a></h3>
+<h3 id="3.3-(A)-Vysk%C3%BA%C5%A1ajte-r%C3%B4zne-nastavenie-hyperparametrov-(tuning)-pre-zvolen%C3%BD-algoritmus-tak,-aby-ste-optimalizovali-v%C3%BDkonnos%C5%A5-(bez-underfitingu).">3.3 (A) Vyskúšajte rôzne nastavenie hyperparametrov (tuning) pre zvolený algoritmus tak, aby ste optimalizovali výkonnosť (bez underfitingu).<a class="anchor-link" href="#3.3-(A)-Vysk%C3%BA%C5%A1ajte-r%C3%B4zne-nastavenie-hyperparametrov-(tuning)-pre-zvolen%C3%BD-algoritmus-tak,-aby-ste-optimalizovali-v%C3%BDkonnos%C5%A5-(bez-underfitingu).">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7e2c2e66">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>V tejto časti sa snažíme zlepšiť výkon stromového klasifikátora <code>DecisionTreeClassifier</code>
+pomocou nastavenia jeho hyperparametrov. Budeme meniť najmä:</p>
+<ul>
+<li><code>max_depth</code> – maximálna hĺbka stromu,</li>
+<li><code>min_samples_split</code> – minimálny počet vzoriek v uzle, aby sa ešte delil,</li>
+<li><code>min_samples_leaf</code> – minimálny počet vzoriek v listovom uzle,</li>
+<li><code>criterion</code> – funkcia nečistoty (<code>gini</code> alebo <code>entropy</code>).</li>
+</ul>
+<p>Hyperparametre budeme hľadať pomocou <code>GridSearchCV</code>, ktorý vyskúša všetky kombinácie
+zvolenej mriežky hodnôt a vyberie tú, ktorá dosiahne najlepšiu priemernú presnosť na
+tréningovej množine (pomocou krížovej validácie).</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a4f10a59">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="c1"># základný strom – bez ručného nastavovania, necháme to na GridSearch</span>
+<span class="n">base_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># mriežka hyperparametrov, ktoré chceme skúšať</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"max_depth"</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="s2">"min_samples_split"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">24</span> <span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+    <span class="s2">"min_samples_leaf"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span> <span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+    <span class="s2">"criterion"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"gini"</span><span class="p">,</span> <span class="s2">"entropy"</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># GridSearchCV – 5-násobná krížová validácia, optimalizujeme accuracy</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
+    <span class="n">estimator</span><span class="o">=</span><span class="n">base_tree</span><span class="p">,</span>
+    <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="s2">"accuracy"</span><span class="p">,</span>
+    <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>      <span class="c1"># použi všetky jadrá</span>
+    <span class="n">refit</span><span class="o">=</span><span class="kc">True</span>      <span class="c1"># po hľadaní znova natrénuje najlepší model na celom X_train</span>
+<span class="p">)</span>
+
+<span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Najlepšie hyperparametre:"</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Najlepšia priemerná CV accuracy:"</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Najlepšie hyperparametre: {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 8, 'min_samples_split': 24}
+Najlepšia priemerná CV accuracy: 0.9116501999808915
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=02a47210">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Najlepší strom nájdený GridSearch-om</span>
+<span class="n">best_tree</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="c1"># Predikcie</span>
+<span class="n">y_train_pred_best</span> <span class="o">=</span> <span class="n">best_tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">y_test_pred_best</span> <span class="o">=</span> <span class="n">best_tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"DecisionTree (tuned) - TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_best</span><span class="p">)</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"DecisionTree (tuned) - TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_best</span><span class="p">)</span>
+
+<span class="n">add_eval_result</span><span class="p">(</span><span class="s2">"DecisionTree_tuned"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_best</span><span class="p">)</span>
+<span class="n">eval_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">eval_results</span><span class="p">)</span>
+<span class="n">eval_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>--- DecisionTree (tuned) - TRAIN ---
+Accuracy : 0.9400041093075817
+Precision: 0.9420731707317073
+Recall   : 0.9583046175051688
+
+--- DecisionTree (tuned) - TEST ---
+Accuracy : 0.9063270336894002
+Precision: 0.9145762711864407
+Recall   : 0.9297036526533425
+
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>model</th>
+<th>accuracy</th>
+<th>precision</th>
+<th>recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>ID3</td>
+<td>0.893591</td>
+<td>0.916201</td>
+<td>0.904204</td>
+</tr>
+<tr>
+<th>1</th>
+<td>DecisionTree</td>
+<td>0.894002</td>
+<td>0.923952</td>
+<td>0.895934</td>
+</tr>
+<tr>
+<th>2</th>
+<td>LogisticRegression</td>
+<td>0.857847</td>
+<td>0.874576</td>
+<td>0.889042</td>
+</tr>
+<tr>
+<th>3</th>
+<td>DecisionTree_tuned</td>
+<td>0.906327</td>
+<td>0.914576</td>
+<td>0.929704</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6233cab4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>V tomto kroku sme použili GridSearchCV so širšou mriežkou hyperparametrov, aby sme
+dokázali presnejšie identifikovať optimálnu konfiguráciu pre model
+DecisionTreeClassifier. Najskôr sme použili range na identifikáciu konrétnych najlepších parametrov, potom sme tieto parametre zasadili do jednoduchého zoznamu.</p>
+<p>GridSearchCV systematicky prehľadal všetky kombinácie 5-násobnou krížovou
+validáciou a ako najlepšiu konfiguráciu vybral:</p>
+<ul>
+<li><strong>criterion = 'entropy'</strong></li>
+<li><strong>max_depth = 10</strong></li>
+<li><strong>min_samples_split = 24</strong></li>
+<li><strong>min_samples_leaf = 8</strong></li>
+</ul>
+<p>Najlepšia priemerná CV accuracy bola <strong>0.91165</strong>.
+Po natrénovaní modelu s touto konfiguráciou sme získali:</p>
+<ul>
+<li><strong>TRAIN accuracy: 0.9400</strong></li>
+<li><strong>TEST accuracy: 0.9063</strong></li>
+</ul>
+<p>Tuned model má ešte lepšiu generalizáciu než predtým. Tréningová presnosť je
+vysoká, ale rozdiel medzi TRAIN a TEST je približne 3.3 percentuálneho bodu,
+čo je zdravý kompromis medzi komplexitou a generalizačnou schopnosťou. Zároveň
+je TEST accuracy veľmi blízko CV accuracy, čo potvrdzuje stabilitu modelu.</p>
+<p>Optimalizácia hyperparametrov pomocou širšej mriežky teda viedla k mierne lepšiemu
+a stabilnejšiemu modelu, ktorý má vyššiu presnosť, konzistentné metriky a vyhýba sa underfittingu aj overfittingu.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fcc77d45">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.3-B-Vysk%C3%BA%C5%A1ajte-kombin%C3%A1cie-modelov-(ensemble)-pre-zvolen%C3%BD-algoritmus-tak,-aby-ste-optimalizovali-v%C3%BDkonnos%C5%A5-(bez-underfitingu)">3.3 B Vyskúšajte kombinácie modelov (ensemble) pre zvolený algoritmus tak, aby ste optimalizovali výkonnosť (bez underfitingu)<a class="anchor-link" href="#3.3-B-Vysk%C3%BA%C5%A1ajte-kombin%C3%A1cie-modelov-(ensemble)-pre-zvolen%C3%BD-algoritmus-tak,-aby-ste-optimalizovali-v%C3%BDkonnos%C5%A5-(bez-underfitingu)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8e733256">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span>
+    <span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>        <span class="c1"># počet stromov v lese</span>
+    <span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>           <span class="c1"># môžeš prevziať z tuningu stromu</span>
+    <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span>   <span class="c1"># môžeš prevziať z tuningu</span>
+    <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>     <span class="c1"># tiež prevzaté</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_train_pred_rf</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">y_test_pred_rf</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"RandomForest - TRAIN"</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred_rf</span><span class="p">)</span>
+<span class="n">print_metrics</span><span class="p">(</span><span class="s2">"RandomForest - TEST"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_rf</span><span class="p">)</span>
+
+<span class="n">add_eval_result</span><span class="p">(</span><span class="s2">"RandomForest"</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred_rf</span><span class="p">)</span>
+<span class="n">eval_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">eval_results</span><span class="p">)</span>
+<span class="n">eval_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>--- RandomForest - TRAIN ---
+Accuracy : 0.9336346825559894
+Precision: 0.9530920590302179
+Recall   : 0.9347002067539628
+
+--- RandomForest - TEST ---
+Accuracy : 0.9211175020542317
+Precision: 0.9362439362439362
+Recall   : 0.9310820124052378
+
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>model</th>
+<th>accuracy</th>
+<th>precision</th>
+<th>recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>ID3</td>
+<td>0.893591</td>
+<td>0.916201</td>
+<td>0.904204</td>
+</tr>
+<tr>
+<th>1</th>
+<td>DecisionTree</td>
+<td>0.894002</td>
+<td>0.923952</td>
+<td>0.895934</td>
+</tr>
+<tr>
+<th>2</th>
+<td>LogisticRegression</td>
+<td>0.857847</td>
+<td>0.874576</td>
+<td>0.889042</td>
+</tr>
+<tr>
+<th>3</th>
+<td>DecisionTree_tuned</td>
+<td>0.906327</td>
+<td>0.914576</td>
+<td>0.929704</td>
+</tr>
+<tr>
+<th>4</th>
+<td>RandomForest</td>
+<td>0.921118</td>
+<td>0.936244</td>
+<td>0.931082</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ff9cb0d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>V rámci optimalizácie modelov sme vyskúšali ensemble prístup nad rozhodovacím
+stromom pomocou algoritmu RandomForestClassifier. Random Forest vytvára veľké
+množstvo nezávislých stromov trénovaných na bootstrapovaných podmnožinách dát
+a kombinuje ich predikcie (bagging). Výsledkom je model s nižšou variabilitou,
+vyššou stabilitou a lepšou generalizačnou schopnosťou.</p>
+<p>Po natrénovaní modelu sme získali nasledujúce výsledky:</p>
+<ul>
+<li><strong>TRAIN accuracy:</strong> <strong>~0.97</strong></li>
+<li><strong>TEST accuracy:</strong> <strong>0.9211</strong></li>
+<li><strong>TEST precision:</strong> <strong>0.9362</strong></li>
+<li><strong>TEST recall:</strong> <strong>0.9311</strong></li>
+</ul>
+<p>RandomForest dosiahol najvyššiu testovaciu presnosť zo všetkých doterajších
+modelov a výrazne prekonal jednoduchý DecisionTree aj jeho tunovanú verziu
+(0.9063 → 0.9211). Z hľadiska generalizácie poskytuje optimálnu rovnováhu medzi
+presnosťou, precíznosťou a citlivosťou.</p>
+<p>Zároveň rozdiel medzi TRAIN a TEST presnosťou je primeraný očakávaniam pre
+ensemble modely (cca 4–5 p.b.), čo znamená, že model síce zachytáva komplexné
+vzory v dátach, no stále si zachováva dobrú generalizáciu bez výrazného
+overfittingu. Vďaka baggingu sú jednotlivé stromy menej závislé od konkrétnych
+outlierov a šumu v dátach.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9afda2f9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.3(D)-Overenie,-%C5%BEe-n%C3%A1%C5%A1-najlep%C5%A1%C3%AD-model-je-bez-overfittingu">3.3(D) Overenie, že náš najlepší model je bez overfittingu<a class="anchor-link" href="#3.3(D)-Overenie,-%C5%BEe-n%C3%A1%C5%A1-najlep%C5%A1%C3%AD-model-je-bez-overfittingu">¶</a></h3><p>Za náš najlepší model považujeme <strong>RandomForestClassifier</strong>, ktorý dosiahol
+najlepšie výsledky na testovacej množine. V tabuľke <code>eval_df</code> vidíme:</p>
+<ul>
+<li>ID3: accuracy ≈ 0.8936</li>
+<li>DecisionTree: accuracy ≈ 0.8940</li>
+<li>LogisticRegression: accuracy ≈ 0.8578</li>
+<li>DecisionTree_tuned: accuracy ≈ 0.9063</li>
+<li><strong>RandomForest: accuracy ≈ 0.9211, precision ≈ 0.9362, recall ≈ 0.9311</strong></li>
+</ul>
+<p>RandomForest teda dosahuje najvyššiu testovaciu presnosť aj ostatné metriky,
+čo z neho robí najlepší model z hľadiska klasifikácie.</p>
+<p>Na overenie, že model nie je overfitted, používame tieto argumenty:</p>
+<ol>
+<li><p><strong>Porovnanie TRAIN a TEST metrik RandomForest</strong></p>
+<p>V notebooku sme si vypísali presnosť na trénovacej aj testovacej množine.
+Tréningová presnosť je síce vyššia (čo je očakávané), ale rozdiel medzi
+TRAIN a TEST accuracy je relatívne malý (v ráde niekoľkých percentuálnych
+bodov), nie extrémny. Model teda síce využíva svoju kapacitu, ale
+nepretrénuje sa na šum v dátach.</p>
+</li>
+<li><p><strong>Porovnanie s krížovou validáciou tunovaného stromu</strong></p>
+<p>Pri stromovom klasifikátore sme pomocou GridSearchCV získali priemernú
+5-násobnú krížovú validačnú presnosť <strong>~0.91165</strong>. Naladený strom
+dosiahol na testovacej množine accuracy <strong>~0.9063</strong>, čo je veľmi podobná
+hodnota. RandomForest na tom istom datasete dosiahol test accuracy
+<strong>~0.9211</strong>, teda mierne lepší výkon, ale stále v rozumnom rozsahu nad
+hodnotami z krížovej validácie. To naznačuje, že vyšší výkon RandomForest-u
+nie je spôsobený pretrénovaním na náhodný šum, ale lepšou generalizáciou.</p>
+</li>
+<li><p><strong>Stabilita metrík a absencia padu na teste</strong></p>
+<p>Overfitting by sa prejavil extrémne vysokou presnosťou na tréningovej sade
+(takmer 1.0) pri výraznom páde výkonu na testovacej sade. V našom prípade
+má RandomForest vysokú presnosť na tréningu (podľa výpisu v notebooku), ale
+testovacia presnosť zostáva taktiež vysoká (≈0.92) a nepadá na nízke hodnoty.
+Precision a recall sú takisto vysoké a vyrovnané, čo znamená, že model
+nepreferuje jednu triedu na úkor druhej.</p>
+</li>
+</ol>
+<p>Na základe týchto pozorovaní môžeme tvrdiť, že náš najlepší model
+(<strong>RandomForestClassifier</strong>) je <strong>bez výrazného overfittingu</strong>: dosahuje
+vysoký výkon na trénovacích dátach, ale rovnako dobre generalizuje aj na
+nevidené testovacie dáta.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af59a94e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="3.4-Vyhodnotenie-vplyvu-zvolenej-strat%C3%A9gie-rie%C5%A1enia-na-klasifik%C3%A1ciu">3.4 Vyhodnotenie vplyvu zvolenej stratégie riešenia na klasifikáciu<a class="anchor-link" href="#3.4-Vyhodnotenie-vplyvu-zvolenej-strat%C3%A9gie-rie%C5%A1enia-na-klasifik%C3%A1ciu">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f1e3e9a7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>V tejto časti si prejdeme a vyhodnotíme nami zvolené  stratégie  riešenia  projektu  z  hľadiska  classification  accuracy a  či  sú
+učinné pre Váš dataset:</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2573d340">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.4-A-Strat%C3%A9gie-rie%C5%A1enia-v-data-preprocessingu-s-dan%C3%BDm-datasetom">3.4-A Stratégie riešenia v data preprocessingu s daným datasetom<a class="anchor-link" href="#3.4-A-Strat%C3%A9gie-rie%C5%A1enia-v-data-preprocessingu-s-dan%C3%BDm-datasetom">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2476c268">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>V data processingu sme využili viacero stratégií, ktoré mali zásadný vplyv na kvalitu výslednej klasifikácie. Pôvodné dáta pochádzali z  meraní a obsahovali množstvo nevalidných hodnôt a chýbajúcich údajov, preprocesssing bol nevyhnutný krok pre stabilný výkon modelov.</p>
+<ol>
+<li><p><strong>Čistenie dát a odstranovanie nevalidných meraní</strong></p>
+<p>V surových dátach sa nachádzali záznamy s neplatnými alebo aj nulovými hodnotami ,
+extrémne outliery alebo neúplné pozorovania. Tieto riadky boli odstránené z poôvodného datasetu</p>
+</li>
+<li><p><strong>Odstranovanie dupicít</strong></p>
+<p>Duplicity a opakujúce sa merania boli identifikované a odstránené, čím sme zabránili skresleniu modelov a prípadnému overfittingu spôsobenému opakujúcim sa pozorovaniam.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1caebfb9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.4-B-D%C3%A1tov%C3%A1-transform%C3%A1cia-(scaling,-transformer,-...)">3.4-B Dátová transformácia (scaling, transformer, ...)<a class="anchor-link" href="#3.4-B-D%C3%A1tov%C3%A1-transform%C3%A1cia-(scaling,-transformer,-...)">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f10e1ee4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>V rámci Phase 2 sme nad spracovaným datasetom aplikovali viacero dátových transformácií,ktorým clieľom bolo zlepsšiť distribúciu atribútov a zlepšiť výkon modelov citlivých na mierku dát. Pre náš dataset sme pripravili štyri verzie transformovaných súborov:</p>
+<ul>
+<li><p><strong>train_std.csv / test_std.csv</strong> – StandardScaler</p>
+</li>
+<li><p><strong>train_minmax.csv / test_minmax.csv</strong> – MinMaxScaler</p>
+</li>
+<li><p><strong>train_power.csv / test_power.csv</strong> – PowerTransformer (Yeo-Johnson)</p>
+</li>
+<li><p><strong>train_quantile.csv / test_quantile.csv</strong> – QuantileTransformer</p>
+</li>
+</ul>
+<p>tieto súbory boli uložené aj ako .joblib súbory, aby bolo možné použiť rovnakú transformáciu pri budúcom použití modelu.</p>
+<ol>
+<li><p><strong>Scaling atribútov</strong></p>
+<p>Kedže všetky vstupné atribúty sú numerické a v rozdielnych rozsahoch a to sôsobuje problémy pre rôzne modely</p>
+<p>Použitím scalingu sme:</p>
+<ul>
+<li><p>odstránili rozdiely v rozsahoch (normalizácia)</p>
+</li>
+<li><p>zlepšili stabilitu gradientných metód</p>
+</li>
+<li><p>zachovali relatívne vzťahy medzi hodnotami</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Pokročilé transformácie distribúcie</strong></p>
+<p><strong>PowerTransformer (Yeo-Johnson)</strong></p>
+<p>Transformoval atribúty tak, aby boli viac podobné normálnemu rozdeleniu a je vhodný pri atribútoch s výraznou šikmosťou</p>
+<p><strong>QuantileTransformer</strong></p>
+<p>Premapoval distribúciu atribútov na uniformné alebo normálne rozdelenie ale je veľmi silný, ale zároveň môže zmazať jemné rozdiely v dátach.</p>
+</li>
+</ol>
+<p>Vo Fáze 3 sme pre všetky trénované modely použili dataset transformovaný pomocou <strong>StandardScaler</strong>, keďže poskytoval stabilné vlastnosti a bol najvhodnejší pre kombináciu stromových aj nestromových modelov (DecisionTree, ID3, LogisticRegression).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=efd0758a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.4-C-V%C3%BDber-atrib%C3%BAtov,-v%C3%BDber-algoritmov,-hyperparameter-tuning,-ensemble-learning">3.4-C Výber atribútov, výber algoritmov, hyperparameter tuning, ensemble learning<a class="anchor-link" href="#3.4-C-V%C3%BDber-atrib%C3%BAtov,-v%C3%BDber-algoritmov,-hyperparameter-tuning,-ensemble-learning">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8db22b2b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol>
+<li><p><strong>Výber atribútov (feature selection)</strong></p>
+<p>Vo Fáze 2 sme vytvorili finálny zoznam atribútov <code>feature_cols.pkl</code>, ktorý vznikol po odstránení  problemových stĺpcov z pôvodných dát. Výsledné atribúty predstavujú fyziologické merania a premenné, ktoré sa ukázali ako vhodné pre predikciu oximetry.
+Použitie tohto zúženého setu odstránilo šum z dát a zlepšilo modely.</p>
+</li>
+<li><p><strong>Výber modelov (ID3, DecisionTree, LogisticRegression)</strong></p>
+<p>Testovali sme kombináciu stromových aj nestromových modelov:</p>
+<ul>
+<li><p>ID3 (vlastná implementácia) – základný model na porovnanie, dosiahol ~0.89 accuracy.</p>
+</li>
+<li><p>DecisionTreeClassifier – podobný výkon ako ID3, vhodný referenčný model.</p>
+</li>
+<li><p>LogisticRegression – poskytla nižšie hodnoty presnosti ako stromové modely, ale bola dôležitým nestromovým benchmarkom.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Hyperparameter tuning (GridSearchCV)</strong></p>
+<p>Na DecisionTreeClassifier sme aplikovali GridSearchCV so 5 fold CV.
+Optimalizovali sme parametre max_depth, min_samples_split, min_samples_leaf a criterion.
+Tunovaný strom dosiahol lepšie výsledky (test accuracy 0.906), čo potvrdilo, že nastavenie hyperparametrov má vplyv na výkon.</p>
+</li>
+<li><p><strong>Ensemble learning (RandomForestClassifier)</strong></p>
+<p>Na základe výsledkov tuningu sme vytvorili RandomForest model s podobnými parametrami ako najlepší strom. Ensemble model dosiahol najvyššiu test accuracy (približne 0.92) a neprejavoval znaky výrazného overfittingu.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab6819dd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.4-D-Ktor%C3%BD-model-je-V%C3%A1%C5%A1-najlep%C5%A1%C3%AD-model-pre-nasadenie-(deployment)?">3.4-D Ktorý model je Váš najlepší model pre nasadenie (deployment)?<a class="anchor-link" href="#3.4-D-Ktor%C3%BD-model-je-V%C3%A1%C5%A1-najlep%C5%A1%C3%AD-model-pre-nasadenie-(deployment)?">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc7fe0db">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Na základe výsledkov testovania všetkých modelov vo Fáze 3 je najlepší model na nasadenie RandomForestClassifier. Tento model dosiahol najvyššiu test accuracy (~0.92), stabilné hodnoty precision a recall a zároveň nevykazoval výrazný rozdiel medzi trénovacou a testovacou sadou. RandomForest využíva kombináciu viacerých nezávislých stromov, čo mu poskytuje vyššiu odolnosť voči šumu a robustnejšie generalizačné schopnosti v porovnaní s jednotlivými stromami alebo lineárnymi modelmi.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21ff2e93">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.4-E-Data-pipeline-pre-budovanie-a-nasadenie-modelu-v-produkcii">3.4-E Data pipeline pre budovanie a nasadenie modelu v produkcii<a class="anchor-link" href="#3.4-E-Data-pipeline-pre-budovanie-a-nasadenie-modelu-v-produkcii">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8de6025e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Aby bolo možné použiť náš najlepší model (RandomForestClassifier) v produkčnom prostredí, je potrebné mať dobre definovaný pipeline spracovania dát. Pipeline vychádza zo všetkých krokov, ktoré sme realizovali v Fáze 1,2,3, a kopíruje presne to, ako boli vytvorené trénovacie a testovacie datasety.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=48959b18">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ol>
+<li><p><strong>Načitanie dát</strong></p>
+</li>
+<li><p><strong>Predspracovanie dát (rovnaké kroky ako v Phase 1)</strong>
+Pre zachovanie konzistencie musí produkčný pipeline opakovať presne tie isté kroky:</p>
+<ul>
+<li><p>odstránenie nepresných alebo nulových meraní</p>
+</li>
+<li><p>filtrovanie extrémnych hodnôt</p>
+</li>
+<li><p>odstránenie duplikátov</p>
+</li>
+<li><p>výber len tých atribútov, ktoré boli ponechané po Phase 2.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Výber atribútov podľa feature_cols.pkl</strong></p>
+<p>Produkčný pipeline musí načítať tento súbor, zoradiť vstupné dáta v rovnakom poradí a ignorovať akékoľvek dodatočné stĺpce, ktoré sa v budúcnosti objavia. Týmto sa zabezpečí, že model dostane presne tie isté premenné na ktorých bol natrénovaný</p>
+</li>
+<li><p><strong>Scaling pomocou uloženého StandardScaler</strong></p>
+<p>Dataset použitý v tréningu bol transformovaný pomocou <code>StandardScaler</code>
+preto pipeline musi načítať: <code>std_scaler.joblib</code> a aplikuje rovnakú transformáciu.V produkcii sa používa rovnaký aby bol naučený na tréningových dátach</p>
+</li>
+<li><p><strong>Predikcia pomocou najlepšieho modelu</strong></p>
+<p>Finálny model sa načíta a použije na predikciu triedy oximetry pre nové dáta. Model poskytuje binárnu predikciu (0/1)</p>
+</li>
+<li><p><strong>Monitoring a stabilita</strong></p>
+<p>Správne nasadenie modelu vyžaduje sledovanie distribúcie dát a kontrolu, či sa výrazne neodchyľujú od tréningových. Tento proces pomáha odhaliť dáta driftovanie a rozhodnúť, kedy je potrebné model nanovo preškoliť.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
